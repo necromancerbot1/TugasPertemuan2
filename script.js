@@ -1,4 +1,6 @@
-
+// ==============================================
+// 1. INISIALISASI WIDGET GOOGLE TRANSLATE
+// ==============================================
 function googleTranslateElementInit() {
     new google.translate.TranslateElement({
         pageLanguage: 'id',
@@ -7,6 +9,9 @@ function googleTranslateElementInit() {
     }, 'google_translate_element');
 }
 
+// ==============================================
+// 2. LOGIKA MENU HAMBURGER & AUTO-CLOSE
+// ==============================================
 const hamburger = document.getElementById('hamburger');
 const menu = document.getElementById('menu');
 const menuLinks = document.querySelectorAll('.menu a');
@@ -21,12 +26,15 @@ menuLinks.forEach(link => {
     });
 });
 
+// ==============================================
+// 3. LOGIKA ANIMASI SCROLL REVEAL & PROGRESS BAR
+// ==============================================
 const reveals = document.querySelectorAll('.reveal');
 
 const scrollObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('muncul');
+            entry.target.classList.add('muncul'); 
             
             const progressBars = entry.target.querySelectorAll('.bar-fill');
             if (progressBars.length > 0) {
